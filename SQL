@@ -1,0 +1,11 @@
+SELECT * FROM pokemons
+
+-- -- INSERT INTO pokemons ('name, 'type', 'level') VALUES ('Pikachu', 'eletric', 5)
+
+-- CREATE TABLE pokemons (
+--   id INT SERIAL PRIMARY KEY
+--   // chave identificadora do array, toda vez que cria novo cadastro, ele acrescenta um numero
+--   name VARCHAR(255) NOT NULL,
+--   type UINT NOT NULL
+--   //UINT só aceita numeros positivos inteiros
+-- );
