@@ -9,13 +9,13 @@ export class PokemonController {
     this.pokemonRepository = new PokemonRepository();
   }
 
-  createPokemon(req: Request, res: Response) {
+  async createPokemon(req: Request, res: Response) {
     // desestruturar e passar as info de req para o pokemon criado
     const { nome, nivel, tipo } = req.body;
     // cria pokemon com as info da req
     const pokemon = new Pokemon(nome, nivel, tipo);
     // inserir no repositorio insert
-    this.pokemonRepository.insert(pokemon);
+    await this.pokemonRepository.insert(pokemon);
     res.status(201).json({
       id: pokemon.id,
       nome: pokemon.nome,

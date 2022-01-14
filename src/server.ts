@@ -4,7 +4,19 @@ import { PokemonController } from './controllers/pokemon-controller';
 const app = express();
 app.use(express.json());
 const pokemonController = new PokemonController();
-app.post('/pokemon', (req, res) => pokemonController.createPokemon(req, res));
+
+app.post('/pokemon', assync (req, res) =>
+  pokemonController.createPokemon(req, res)
+  );
+app.get('/pokemon/:nome', (req, res) =>
+  pokemonController.getPokemonByName(req, res),
+);
+app.patch('/pokemon/:nome', (req, res) =>
+  pokemonController.updatePokemone(req, res),
+);
+app.delete('/pokemon/:nome', (req, res) =>
+  pokemonController.deletePokemonBy(req, res),
+);
 // app.get('/pokemon/:nome'), (res,res)
 app.listen(3000, () => {
   console.log('Server iniciado na porta 3000');
